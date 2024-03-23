@@ -8,5 +8,5 @@ class Questionnaire(Form):
     qnone = SelectField(label="qnone", validators=DataRequired())
     qntwo = RadioField(label="qntwo", validators=DataRequired())
     qnthree = TextAreaField(label="qnthree", validators=DataRequired())
-    qn_four = IntegerField(label="qn_four", validators=DataRequired)
-    
+    qn_four = IntegerField(label="qn_four", validators=DataRequired())
+    qn_five = TextAreaField(label="qnthree", validators=DataRequired())
