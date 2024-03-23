@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-
+from forms import Questionnaire
 app = Flask(__name__)
 
 @app.route('/')
@@ -16,8 +16,12 @@ def form():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    username = request.form['username']
-    return f"Hello {username}! Thank you for submitting the form!"
+    form = Questionnaire()
+    if form.validate_on_submit():
+        username = request.form['f_name']
+        return f"Hello {username}! Thank you for submitting the form!"
+    else:
+        return "Invalid submission. Please try again."
 
 if __name__== "__main__":
     app.run(debug=True)
