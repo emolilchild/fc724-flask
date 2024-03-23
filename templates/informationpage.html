@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Page</title>
+    <!-- link to the external css file for styling-->
+    <link rel="stylesheet" href="static/assignment.css">
+</head>
+
+<body>
+    <!-- header section containing nagivation-->
+    <header>
+        <nav>
+            <!-- navigation logo-->
+            <div class="nav">
+                <!-- link to home page with the logo as a photo-->
+                <a id="logo" href="{{url_for('homepage')}}"><img src="static/UofG_Coat_of_Arms.png" style="width:auto;height:60px"> </a>
+            </div>
+            <div>
+                <!-- title of the page-->
+                <h1>Glasgow International College</h1>
+            </div>
+            <!-- links to other parts of the page-->
+            <div class="nav">
+                <a href="{{url_for('info')}}">About</a>
+            </div>
+            <div class="nav">
+                <a href="{{url_for('form')}}">Form</a>
+            </div>
+        </nav>
+
+    </header>
+    <!-- horizontal line to separate header from the rest of the main content-->
+    <hr>
+    <!--main content section-->
+    <main>
+        <!-- right side content-->
+        <div class="rightside">
+            <!-- heading explaining the purpose of data collection-->
+            <h2 id="why">Why are we collecting data?</h2>
+            <p>At GIC, we aim to provide our students with the <span class="here">best possible academic
+                    experience.</span> </p>
+            <p>Collecting data on student progress allows us to enhance the quality of education and the success of our
+                students.</p>
+            </p>
+            <!-- heading to explain the benefits of data collection-->
+            <h2 id="how">How is data collection beneficial?</h2>
+            <p>
+                By analyzing student data, we gain insights into the effectiveness of our curriculum. </p>
+            <p>This enables us to
+                recognise trends and make informed decisions to <span class="here"> our curriculum.</span></p>
+            <p>
+                <!-- list of benefits of data collection-->
+            <ul>
+                <li>provide feedback to our teaching staff to facilitate necessary adjustments to their individual
+                    teaching
+                    style</li>
+                <li>revise our course content to ensure its relevance and alignment with current industry standards.
+                </li>
+
+            </ul>
+            </p>
+        </div>
+        <!--left side content-->
+        <div class="leftside2">
+            <!-- explaination of how data collects benefits the student directly-->
+            <span id="sec">This valuable information allows us to enhance <span class="here">your</span> student
+                experience with us.
+                <!-- provide a link to the form foe student to act on-->
+                <a href="{{url_for('form')}}">Fill Form!</a> </span><br>
+            <p></p>
+            <!-- add an image of the school for more engagement-->
+            <img src="static/Media_932044_smxx.jpg" style="width:auto;height:350px">
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <!-- to link external css file for styling-->
+    <link rel="stylesheet" href="static/assignment.css">
+</head>
+
+<body>
+    <!-- header containing nav-->
+    <header>
+        <nav>
+            <!-- nav logo-->
+            <div class="nav">
+                <!-- link to home page with the pic of logo-->
+                <a id="logo" href="{{url_for('homepage')}}"><img src="static/UofG_Coat_of_Arms.png" style="width:auto;height:60px"> </a>
+            </div>
+            <div>
+                <h1>Glasgow International College</h1>
+            </div>
+            <!-- more nav lins to all the other pages-->
+            <div class="nav">
+                <a href="{{url_for('info')}}">About</a>
+            </div>
+            <div class="nav">
+                <a href="{{url_for('form')}}">Form</a>
+            </div>
+        </nav>
+    </header>
+    <!-- horizontal line to separate the header from the main-->
+    <hr>
+    <main>
+        <!-- left side content-->
+        <div class="leftside">
+            <!-- welcome message with an image-->
+            <div id="welcomepgh2">
+                <h2>We welcome you to <br>
+                    Glasgow International College!
+                </h2> <br>
+                <!--image to represent the college-->
+                <img class="bgimg" src="static/university-glasgow_638.jpg" height="350" width="600px">
+            </div>
+        </div>
+        <!-- right side content-->
+        <div class="rightside">
+            <!-- about us section-->
+            <h3 id="about">About Us</h3>
+            <!-- introduce the college-->
+            <p>Here at GIC we offer you a pathway into your dream degree at the University of Glasgow. </p>
+
+            <p>By enrolling in our comprehensive degree preparation course,<br> we can <span>
+                    class="here">guarantee</span>
+                your
+                admission to the
+                degree program of <span class="here">your choice.</span> </p>
+            <!-- description of the course-->
+            <p>This course has been designed to equip you with the essential skills,<br> knowledge and confidence
+                required
+                to excel in your chosen academic field.
+            </p>
+            <!-- explain the benefits of joining-->
+            <p>With our dedicated faculty and state-of-the-art facilities, <br>you'll receive personalized support every
+                step of the way. </p>
+            <p>From academic guidance to career readiness resources, <br>we're here to empower you to excel academically
+                and
+                professionally.</p>
+            <!-- call to action-->
+            <p>Take the first step towards unlocking endless opportunities by joining us at GIC.<br>
+                Your path to success begins right <span class="here">here</span>.</p>
+            <p></p>
+            <h3 id="expect">What you can expect from this site</h3>
+            <p>This platform was established with the purpose of gathering data on students' academic progress.
+                <!-- provide link to the next page-->
+            <nav><a id="learn" href="{{url_for('info')}}">Learn more!</a></nav>
+            </p>
+        </div>
+
+    </main>
+    <footer></footer>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection</title>
+    <link rel="stylesheet" href="static/assignment.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav">
+                <a id="logo" href="{{url_for('homepage')}}"><img src="static/UofG_Coat_of_Arms.png" style="width:auto;height:60px"> </a>
+            </div>
+            <div>
+                <h1>Glasgow International College</h1>
+            </div>
+            <div class="nav">
+                <a href="{{url_for('info')}}">About</a>
+            </div>
+            <div class="nav">
+                <a href="{{url_for('form')}}">Form</a>
+            </div>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <!-- form for data collection-->
+        <form action="/submit" method="post">
+            <!--section for identification purposes-->
+            <div id="identification">
+                <h2 id="info">First things first!</h2>
+                <!-- input fields for name, student number and email and make them all required to fill in-->
+                <label for="fname">Name:</label>
+                <input id="fname" type="text" placeholder="Enter your first name" name="username" required>
+                <input id="lname" type="text" placeholder="Enter your last name" required> <br>
+                <label for="pnumber">Student Number:</label>
+                <input id="pnumber" type="number" placeholder="Enter you P number" required> <br>
+                <label for="email" required>Student Email:</label>
+                <input id="email" type="email" placeholder="Enter you student email" required>
+            </div>
+            <!--questionaire section-->
+            <div id="questionaire">
+                <p></p>
+                <h2 id="form">Fill in the form.</h2>
+                <p>
+                    <!--provide a dropdown for student to select what course they are in so that feedback can go to the right areas accordingly-->
+                    <label class="q" for="q1">Q1: What course do you take here in GIC?</label>
+                    <select name="dropdown" id="dropdown">
+                        <option value="FCsciandeng">FC Science and Engineering</option>
+                        <option value="FCbuisandmanage">FC Buisness and Management</option>
+                        <option value="PMsciandeng">PM Science and Engineering</option>
+                        <option value="PMbuisandmanage">PM Buisness and Management</option>
+                    </select>
+                </p>
+
+                <p class="q">
+
+                    Q2: What grade did you get for last semester?
+                </p>
+                <!--use radio buttons for grade selection and only one radio button can be submitted-->
+                <p><input id="A" type="radio" value="A" name="grade">
+                    <label for="A">A</label>
+                    <input id="B" type="radio" value="B" name="grade">
+                    <label for="B">B</label>
+                    <input id="C" type="radio" value="C" name="grade">
+                    <label for="C">C</label>
+                    <input id="D" type="radio" value="D" name="grade">
+                    <label for="D">D</label>
+                    <input id="E" type="radio" value="E" name="grade">
+                    <label for="E">E</label>
+                    <input id="F" type="radio" value="F" name="grade">
+                    <label for="F">F</label>
+                </p>
+
+                <p>
+                    <label class="q" for="q3">Q3: How do you feel about the grade you have obtained?</label>
+                </p>
+                <!--text area for providing feedback-->
+                <p><textarea placeholder="Write how you are feeling here" rows="6" cols="80"></textarea></p>
+                <p class="q">
+                    Q4: How satisfied are you with your academic experience here in
+                    GIC?
+                </p>
+                <!-- provide a slider for the students to measure they satisfaction levels-->
+                <p>
+                    <label for="q4">Level of Satisfaction</label>
+                    <input id="q4" type="range" name="range" min="0" max="10"">
+                </p>
+                <p>
+                    <label class=" q" for="q5">Q5: Is there anything you would change about the curriculum?</label>
+                </p>
+                <p><textarea placeholder="Write your feedback here" rows="6" cols="80"></textarea></p>
+                <p class="q">Q6: What do you like about GIC?</p>
+                <!-- use check boxes to select multiple options-->
+                <p>
+                    <label for="1">Teacher</label>
+                    <input id="1" type="checkbox" value="teachers">
+
+                </p>
+                <p><label for="2">Friends</label>
+                    <input id="2" type="checkbox" value="friends">
+                </p>
+                <p><label for="3">Location</label>
+                    <input id="3" type="checkbox" value="location">
+                </p>
+                <p><label for="4">Curriculum</label>
+                    <input id="4" type="checkbox" value="Curriculum">
+                </p>
+                <p>
+                    <label class="q" for="q6">Q7: Is there any other feedback you would like to add?</label>
+                </p>
+                <p><textarea placeholder="Write your feedback here" rows="6" cols="80"></textarea></p>
+                <p class="q">
+                    Q8: How would you rate this questionaire?
+                </p>
+                <p><input id="vgd" type="radio" value="vgd" name="level">
+                    <label for="vgd">Very Good</label>
+                    <input id="gd" type="radio" value="gd" name="level">
+                    <label for="gd">Good</label>
+                    <input id="neutral" type="radio" value="neutral" name="level">
+                    <label for="neutral">Neutral</label>
+                    <input id="neutral" type="radio" value="bad" name="level">
+                    <label for="neutral">Bad</label>
+                    <input id="neutral" type="radio" value="vbad" name="level">
+                    <label for="neutral">Very Bad</label>
+
+            </div>
+            <!--provide a button for the student to submit the form-->
+            <button id="button" type="submit">Submit</button>
+
+        </form>
+    </main>
+    <footer>
+        <!--provide a contact for the student to use in case they need help-->
+        <a href="contactGIC@gmail.com">Contact Us</a>
+    </footer>
+</body>
+
+
+</html>
