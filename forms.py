@@ -1,4 +1,4 @@
-from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField
+from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
 class Questionnaire(Form):
     f_name = StringField(label="f_name", validators=DataRequired())
@@ -13,3 +13,4 @@ class Questionnaire(Form):
     qn_six = BooleanField(label="qnsix", validators=DataRequired(), choices=[("teacher", "Teacher"), ("friend", "Friends"), ("location", "Location"), ("curriculum", "Curriculum")])
     qn_seven = TextAreaField(label="qnseven", validators=DataRequired())
     qn_eight = RadioField(label="qntwo", validators=DataRequired(), choices=[("very good", "Very Good"), ("good", "Good"), ("neutral", "Neutral"), ("bad", "Bad"), ("very bad", "Very Bad")])
+    button = SubmitField(label="submit")
