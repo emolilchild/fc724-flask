@@ -14,6 +14,11 @@ def info():
 def form():
     return render_template("datacollection.html")
 
+@app.route('/submit', methods=['POST'])
+def submit():
+    username = request.form['username']
+    return f"Hello {username}! Thank you for submitting the form!"
+
 if __name__== "__main__":
     app.run(debug=True)
 
