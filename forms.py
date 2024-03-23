@@ -10,7 +10,7 @@ class Questionnaire(Form):
     qnthree = TextAreaField(label="qnthree", validators=[DataRequired()])
     qn_four = IntegerField(label="qnfour", validators=[DataRequired()])
     qn_five = TextAreaField(label="qnfive", validators=[DataRequired()])
-    qn_six = BooleanField(label="qnsix", validators=[DataRequired()], choices=[("teacher", "Teacher"), ("friend", "Friends"), ("location", "Location"), ("curriculum", "Curriculum")])
+    qn_six = BooleanField(label="qnsix", validators=[DataRequired()])
     qn_seven = TextAreaField(label="qnseven", validators=[DataRequired()])
     qn_eight = RadioField(label="qntwo", validators=[DataRequired()], choices=[("very good", "Very Good"), ("good", "Good"), ("neutral", "Neutral"), ("bad", "Bad"), ("very bad", "Very Bad")])
     button = SubmitField(label="submit")

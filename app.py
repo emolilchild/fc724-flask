@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 from forms import Questionnaire
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = 'hey'
 @app.route('/')
 def homepage():
     return render_template("welcome.html")
