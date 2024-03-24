@@ -18,7 +18,7 @@
     <hr>
     <main>
         <!-- form for data collection-->
-        <form action= method="post">
+        <form action="{{url_for('data')" method="post">
             {{ form.hidden_tag() }}
             <!--section for identification purposes-->
             <div id="identification">
@@ -29,11 +29,12 @@
 
                 {{ form.l_name..label(for="lname") }}
                 {{ form.lname(id="lname", placeholder="Enter your last name", required=True) }} <br>
-                
-                <label for="pnumber">Student Number:</label>
-                <input id="pnumber" type="number" placeholder="Enter you P number" required> <br>
-                <label for="email" required>Student Email:</label>
-                <input id="email" type="email" placeholder="Enter you student email" required>
+
+                {{ form.student_number.label(for="pnumber") }}
+                {{ form.student_number(id="pnumber", placeholder="Enter you P number", required=True) }} <br>
+
+                {{ form.email.label(for="email") }}
+                {{ form.email(id="email", placeholder="Enter you student email", required=True) }}
             </div>
             <!--questionaire section-->
             <div id="questionaire">

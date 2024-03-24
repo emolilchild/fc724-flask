@@ -1,11 +1,17 @@
 from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Email, Length
 class Questionnaire(Form):
-    f_name = StringField(label="f_name", validators=[DataRequired()])
-    l_name = StringField(label="l_name", validators=[DataRequired()])
-    student_number = IntegerField(label="student_number", validators=[DataRequired(),Length(min=6, max=6)])
-    email = StringField(label="email", validators=[DataRequired(), Email()])
-    qnone = SelectField(label="qnone", validators=[DataRequired()])
+    f_name = StringField(label="First Name", validators=[DataRequired()])
+    l_name = StringField(label="Last Name", validators=[DataRequired()])
+    student_number = IntegerField(label="Student Number", validators=[DataRequired(),Length(min=6, max=6)])
+    email = StringField(label="Email", validators=[DataRequired(), Email()])
+    qnone = SelectField(label="Question One", validators=[DataRequired()], choices=[("FCsciandeng", "FC Science and Engineering"),
+                                                                                    ("FCbuisandmanage", "FC Buisness and Management"),
+                                                                                    ("PMsciandeng", "PM Science and Engineering"),
+                                                                                    ("PMbuisandmanage", "PM Buisness and Management")])
+
+
+
     qntwo = RadioField(label="qntwo", validators=[DataRequired()], choices=[("a", "A"), ("b", "B"), ("c", "C"), ("d","D"), ("e", "E"), ("f", "F")])
     qnthree = TextAreaField(label="qnthree", validators=[DataRequired()])
     qn_four = IntegerField(label="qnfour", validators=[DataRequired()])
