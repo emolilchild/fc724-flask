@@ -1,11 +1,11 @@
 from flask_wtf import FlaskForm
 from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, Email, Optional, Length
+from wtforms.validators import DataRequired, Optional
 class Questionnaire(FlaskForm):
     f_name = StringField(label="First Name", validators=[DataRequired()])
     l_name = StringField(label="Last Name", validators=[DataRequired()])
-    student_number = IntegerField(label="Student Number", validators=[DataRequired(), Length(min=6, max=6)])
-    email = StringField(label="Email", validators=[DataRequired(), Email()])
+    student_number = IntegerField(label="Student Number", validators=[DataRequired()])
+    email = StringField(label="Email", validators=[DataRequired()])
     qn_one = SelectField(label="Q1: What course do you take here in GIC?", validators=[DataRequired()], choices=[("FCsciandeng", "FC Science and Engineering"),
                                                                                     ("FCbuisandmanage", "FC Buisness and Management"),
                                                                                     ("PMsciandeng", "PM Science and Engineering"),
@@ -15,8 +15,7 @@ class Questionnaire(FlaskForm):
 
     qn_three = TextAreaField(label="Q3: How do you feel about the grade you have obtained?", validators=[DataRequired()])
 
-    qn_four = IntegerField(label="How satisfied are you with your academic experience here in GIC?",
-                           validators=[DataRequired()])
+    qn_four = IntegerField(label="How satisfied are you with your academic experience here in GIC?")
     qn_five = TextAreaField(label="Q5: Is there anything you would change about the curriculum?", validators=[DataRequired()])
     teachers = BooleanField(label="Teachers", validators=[Optional()])
     friends = BooleanField(label="Friends", validators=[Optional()])
