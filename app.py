@@ -14,7 +14,7 @@ def info():
 @app.route('/data', methods=['GET', 'POST'])
 def data():
     form = Questionnaire()
-    if form.validate():
+    if form.validate_on_submit():
         result = request.form
         return render_template("result.html", result=result)
     return render_template("datacollection.html", form=form)

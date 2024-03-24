@@ -1,6 +1,7 @@
+from flask_wtf import FlaskForm
 from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField, SubmitField
 from wtforms.validators import DataRequired, Email, NumberRange, Length
-class Questionnaire(Form):
+class Questionnaire(FlaskForm):
     f_name = StringField(label="First Name", validators=[DataRequired()])
     l_name = StringField(label="Last Name", validators=[DataRequired()])
     student_number = IntegerField(label="Student Number", validators=[DataRequired(), Length(min=6, max=6)])
