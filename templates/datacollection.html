@@ -24,17 +24,17 @@
             <div id="identification">
                 <h2 id="info">First things first!</h2>
                 <!-- input fields for name, student number and email and make them all required to fill in-->
-                {{ form.f_name.label(for="fname") }}
-                {{ form.f_name(id="fname", placeholder="Enter your first name", required=True) }}
+                {{ form.f_name.label }}
+                {{ form.f_name(placeholder="Enter your first name", required=True) }}
 
-                {{ form.l_name..label(for="lname") }}
-                {{ form.lname(id="lname", placeholder="Enter your last name", required=True) }} <br>
+                {{ form.l_name.label }}
+                {{ form.l_name( placeholder="Enter your last name", required=True) }} <br>
 
-                {{ form.student_number.label(for="pnumber") }}
-                {{ form.student_number(id="pnumber", placeholder="Enter you P number", required=True) }} <br>
+                {{ form.student_number.label }}
+                {{ form.student_number( placeholder="Enter you P number", required=True) }} <br>
 
-                {{ form.email.label(for="email") }}
-                {{ form.email(id="email", placeholder="Enter you student email", required=True) }}
+                {{ form.email.label }}
+                {{ form.email( placeholder="Enter you student email", required=True) }}
             </div>
             <!--questionaire section-->
             <div id="questionaire">
@@ -42,32 +42,20 @@
                 <h2 id="form">Fill in the form.</h2>
                 <p>
                     <!--provide a dropdown for student to select what course they are in so that feedback can go to the right areas accordingly-->
-                    <label class="q" for="q1">Q1: What course do you take here in GIC?</label>
-                    <select name="dropdown" id="dropdown">
-                        <option value="FCsciandeng">FC Science and Engineering</option>
-                        <option value="FCbuisandmanage">FC Buisness and Management</option>
-                        <option value="PMsciandeng">PM Science and Engineering</option>
-                        <option value="PMbuisandmanage">PM Buisness and Management</option>
-                    </select>
-                </p>
+                    {{ form.qnone.label }}
+                    {{ form.qnone() }}
 
-                <p class="q">
-
-                    Q2: What grade did you get for last semester?
                 </p>
                 <!--use radio buttons for grade selection and only one radio button can be submitted-->
-                <p><input id="A" type="radio" value="A" name="grade">
-                    <label for="A">A</label>
-                    <input id="B" type="radio" value="B" name="grade">
-                    <label for="B">B</label>
-                    <input id="C" type="radio" value="C" name="grade">
-                    <label for="C">C</label>
-                    <input id="D" type="radio" value="D" name="grade">
-                    <label for="D">D</label>
-                    <input id="E" type="radio" value="E" name="grade">
-                    <label for="E">E</label>
-                    <input id="F" type="radio" value="F" name="grade">
-                    <label for="F">F</label>
+                {{ form.qntwo.label }}
+                <ul>
+                    {% for subfield in form.qntwo %}
+                    <li>
+                        {{ subfield }} {{ subfield.label }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                
                 </p>
 
                 <p>
