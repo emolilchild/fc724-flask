@@ -1,1 +1,21 @@
 
+First name: Andrea
+Last name: Tang
+Student number: 111111
+Email: andreqtqng@gmail.com
+Question 1: FCsciandeng
+Question 2: 6
+Question 3: Test 1
+Question 5: Test 1
+Question 7: Test 1
+Question 8: 1
+First name: Andrea
+Last name: Tang
+Student number: 111111
+Email: andreqtqng@gmail.com
+Question 1: FCsciandeng
+Question 2: 6
+Question 3: Test 2
+Question 5: Test 2
+Question 7: Test 2
+Question 8: 1
