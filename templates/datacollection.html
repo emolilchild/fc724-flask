@@ -25,16 +25,16 @@
                 <h2 id="info">First things first!</h2>
                 <!-- input fields for name, student number and email and make them all required to fill in-->
                 {{ form.f_name.label }}
-                {{ form.f_name(placeholder="Enter your first name", required=True) }}
+                {{ form.f_name(placeholder="Enter your first name") }}
 
                 {{ form.l_name.label }}
-                {{ form.l_name( placeholder="Enter your last name", required=True) }} <br>
+                {{ form.l_name( placeholder="Enter your last name") }} <br>
 
                 {{ form.student_number.label }}
-                {{ form.student_number( placeholder="Enter you P number", required=True) }} <br>
+                {{ form.student_number( placeholder="Enter you P number") }} <br>
 
                 {{ form.email.label }}
-                {{ form.email( placeholder="Enter you student email", required=True) }}
+                {{ form.email( placeholder="Enter you student email") }}
             </div>
             <!--questionaire section-->
             <div id="questionaire">
@@ -60,7 +60,7 @@
                 </p>
  <!--text area for providing feedback-->
                 <p>
-                    {{ form.qnthree.label }}
+                    {{ form.qnthree.label(placeholder="Write here" }}
                     {{ form.qnthree(row=6, cols=80) }}
 
                 </p>
@@ -70,27 +70,28 @@
                     <input type="range" min="1" max="10" step="1">
                     {{ form.qnfour() }}
                 </p>
-                
+
                 <p>
-                    <label class=" q" for="q5">Q5: Is there anything you would change about the curriculum?</label>
-                </p>
-                <p><textarea placeholder="Write your feedback here" rows="6" cols="80"></textarea></p>
-                <p class="q">Q6: What do you like about GIC?</p>
-                <!-- use check boxes to select multiple options-->
-                <p>
-                    <label for="1">Teacher</label>
-                    <input id="1" type="checkbox" value="teachers">
+                    {{ form.qnfive.label(placeholder="Write here" }}
+                    {{ form.qnfive(row=6, cols=80) }}
 
                 </p>
-                <p><label for="2">Friends</label>
-                    <input id="2" type="checkbox" value="friends">
-                </p>
-                <p><label for="3">Location</label>
-                    <input id="3" type="checkbox" value="location">
-                </p>
-                <p><label for="4">Curriculum</label>
-                    <input id="4" type="checkbox" value="Curriculum">
-                </p>
+
+                <p class="q">Q6: What do you like about GIC?</p>
+                <!-- use check boxes to select multiple options-->
+
+                    {{ form.teacher.label }}
+                    {{ form.teacher() }}
+                <br>
+                {{ form.friends.label }}
+                {{ form.friends() }}
+                <br>
+                {{ form.location.label }}
+                {{ form.location() }}
+                <br>
+                {{ form.curr.label }}
+                {{ form.curr() }}
+
                 <p>
                     <label class="q" for="q6">Q7: Is there any other feedback you would like to add?</label>
                 </p>

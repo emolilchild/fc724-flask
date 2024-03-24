@@ -1,5 +1,5 @@
 from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, Email, NumberRange
+from wtforms.validators import DataRequired, Email, NumberRange, Length
 class Questionnaire(Form):
     f_name = StringField(label="First Name", validators=[DataRequired()])
     l_name = StringField(label="Last Name", validators=[DataRequired()])
@@ -16,9 +16,11 @@ class Questionnaire(Form):
 
     qn_four = IntegerField(label="How satisfied are you with your academic experience here in GIC?",
                            validators=[DataRequired(), NumberRange(min=1, max=10)])
-
-    qn_five = TextAreaField(label="qnfive", validators=[DataRequired()])
-    qn_six = BooleanField(label="qnsix", validators=[DataRequired()])
+    qn_five = TextAreaField(label="Q5: Is there anything you would change about the curriculum?", validators=[DataRequired()])
+    teachers = BooleanField(label="Teachers", validators=[DataRequired()])
+    friends = BooleanField(label="Friends", validators=[DataRequired()])
+    location = BooleanField(label="Location", validators=[DataRequired()])
+    curr = BooleanField(label="Curriculum", validators=[DataRequired()])
     qn_seven = TextAreaField(label="qnseven", validators=[DataRequired()])
     qn_eight = RadioField(label="qntwo", validators=[DataRequired()], choices=[("very good", "Very Good"), ("good", "Good"), ("neutral", "Neutral"), ("bad", "Bad"), ("very bad", "Very Bad")])
     submit = SubmitField(label="submit")
