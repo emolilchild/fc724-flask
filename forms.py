@@ -1,5 +1,5 @@
 from wtforms import Form, StringField, IntegerField, SelectField, RadioField, TextAreaField, BooleanField, SubmitField
-from wtforms.validators import DataRequired, Email, Length
+from wtforms.validators import DataRequired, Email, NumberRange
 class Questionnaire(Form):
     f_name = StringField(label="First Name", validators=[DataRequired()])
     l_name = StringField(label="Last Name", validators=[DataRequired()])
@@ -9,14 +9,14 @@ class Questionnaire(Form):
                                                                                     ("FCbuisandmanage", "FC Buisness and Management"),
                                                                                     ("PMsciandeng", "PM Science and Engineering"),
                                                                                     ("PMbuisandmanage", "PM Buisness and Management")])
-
-
-
     qntwo = RadioField(label="What grade did you get for last semester?", validators=[DataRequired()],
                        choices=[("1", "A"), ("2", "B"), ("3", "C"), ("4","D"), ("5", "E"), ("6", "F")])
 
-    qnthree = TextAreaField(label="qnthree", validators=[DataRequired()])
-    qn_four = IntegerField(label="qnfour", validators=[DataRequired()])
+    qnthree = TextAreaField(label="Q3: How do you feel about the grade you have obtained?", validators=[DataRequired()])
+
+    qn_four = IntegerField(label="How satisfied are you with your academic experience here in GIC?",
+                           validators=[DataRequired(), NumberRange(min=1, max=10)])
+
     qn_five = TextAreaField(label="qnfive", validators=[DataRequired()])
     qn_six = BooleanField(label="qnsix", validators=[DataRequired()])
     qn_seven = TextAreaField(label="qnseven", validators=[DataRequired()])

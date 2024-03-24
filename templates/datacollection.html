@@ -46,6 +46,7 @@
                     {{ form.qnone() }}
 
                 </p>
+                <p>
                 <!--use radio buttons for grade selection and only one radio button can be submitted-->
                 {{ form.qntwo.label }}
                 <ul>
@@ -55,23 +56,21 @@
                     </li>
                     {% endfor %}
                 </ul>
-                
-                </p>
 
-                <p>
-                    <label class="q" for="q3">Q3: How do you feel about the grade you have obtained?</label>
                 </p>
-                <!--text area for providing feedback-->
-                <p><textarea placeholder="Write how you are feeling here" rows="6" cols="80"></textarea></p>
-                <p class="q">
-                    Q4: How satisfied are you with your academic experience here in
-                    GIC?
+ <!--text area for providing feedback-->
+                <p>
+                    {{ form.qnthree.label }}
+                    {{ form.qnthree(row=6, cols=80) }}
+
                 </p>
                 <!-- provide a slider for the students to measure they satisfaction levels-->
                 <p>
-                    <label for="q4">Level of Satisfaction</label>
-                    <input id="q4" type="range" name="range" min="0" max="10"">
+                    {{ form.qnfour.label }}
+                    <input type="range" min="1" max="10" step="1">
+                    {{ form.qnfour() }}
                 </p>
+                
                 <p>
                     <label class=" q" for="q5">Q5: Is there anything you would change about the curriculum?</label>
                 </p>
