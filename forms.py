@@ -17,7 +17,7 @@ class Questionnaire(FlaskForm):
                        choices=[("1", "A"), ("2", "B"), ("3", "C"), ("4","D"), ("5", "E"), ("6", "F")])
 
     qn_three = TextAreaField(label="Q3: How do you feel about the grade you have obtained?", validators=[DataRequired()])
-    qn_four = StringField(label="Q4: How satisfied are you with your academic experience here in GIC?")
+
     qn_five = TextAreaField(label="Q5: Is there anything you would change about the curriculum?", validators=[DataRequired()])
     teachers = BooleanField(label="Teachers", validators=[Optional()])
     friends = BooleanField(label="Friends", validators=[Optional()])
