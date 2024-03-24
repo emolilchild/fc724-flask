@@ -42,15 +42,15 @@
                 <h2 id="form">Fill in the form.</h2>
                 <p>
                     <!--provide a dropdown for student to select what course they are in so that feedback can go to the right areas accordingly-->
-                    {{ form.qnone.label }}
-                    {{ form.qnone() }}
+                    {{ form.qn_one.label }}
+                    {{ form.qn_one() }}
 
                 </p>
                 <p>
                 <!--use radio buttons for grade selection and only one radio button can be submitted-->
-                {{ form.qntwo.label }}
+                {{ form.qn_two.label }}
                 <ul>
-                    {% for subfield in form.qntwo %}
+                    {% for subfield in form.qn_two %}
                     <li>
                         {{ subfield }} {{ subfield.label }}
                     </li>
@@ -60,20 +60,20 @@
                 </p>
  <!--text area for providing feedback-->
                 <p>
-                    {{ form.qnthree.label(placeholder="Write here" }}
-                    {{ form.qnthree(row=6, cols=80) }}
+                    {{ form.qn_three.label(placeholder="Write here" }}
+                    {{ form.qn_three(row=6, cols=80) }}
 
                 </p>
                 <!-- provide a slider for the students to measure they satisfaction levels-->
                 <p>
-                    {{ form.qnfour.label }}
+                    {{ form.qn_four.label }}
                     <input type="range" min="1" max="10" step="1">
-                    {{ form.qnfour() }}
+                    {{ form.qn_four() }}
                 </p>
 
                 <p>
-                    {{ form.qnfive.label(placeholder="Write here" }}
-                    {{ form.qnfive(row=6, cols=80) }}
+                    {{ form.qn_five.label(placeholder="Write here" }}
+                    {{ form.qn_five(row=6, cols=80) }}
 
                 </p>
 
@@ -93,26 +93,26 @@
                 {{ form.curr() }}
 
                 <p>
-                    <label class="q" for="q6">Q7: Is there any other feedback you would like to add?</label>
+                    {{ form.qn_seven.label(placeholder="Write here" }}
+                    {{ form.qn_seven(row=6, cols=80) }}
                 </p>
-                <p><textarea placeholder="Write your feedback here" rows="6" cols="80"></textarea></p>
+
                 <p class="q">
-                    Q8: How would you rate this questionaire?
+                    Q8: How would you rate this questionnaire?
                 </p>
-                <p><input id="vgd" type="radio" value="vgd" name="level">
-                    <label for="vgd">Very Good</label>
-                    <input id="gd" type="radio" value="gd" name="level">
-                    <label for="gd">Good</label>
-                    <input id="neutral" type="radio" value="neutral" name="level">
-                    <label for="neutral">Neutral</label>
-                    <input id="neutral" type="radio" value="bad" name="level">
-                    <label for="neutral">Bad</label>
-                    <input id="neutral" type="radio" value="vbad" name="level">
-                    <label for="neutral">Very Bad</label>
+                <p>
+                    {{ form.qn_eight.label }}
+                <ul>
+                    {% for subfield in form.qn_two %}
+                    <li>
+                        {{ subfield }} {{ subfield.label }}
+                    </li>
+                    {% endfor %}
+                </ul>
 
             </div>
             <!--provide a button for the student to submit the form-->
-            <button id="button" type="submit">Submit</button>
+            {{ form.submit() }}
 
         </form>
     </main>

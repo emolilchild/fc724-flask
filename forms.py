@@ -5,14 +5,14 @@ class Questionnaire(Form):
     l_name = StringField(label="Last Name", validators=[DataRequired()])
     student_number = IntegerField(label="Student Number", validators=[DataRequired(),Length(min=6, max=6)])
     email = StringField(label="Email", validators=[DataRequired(), Email()])
-    qnone = SelectField(label="Q1: What course do you take here in GIC?", validators=[DataRequired()], choices=[("FCsciandeng", "FC Science and Engineering"),
+    qn_one = SelectField(label="Q1: What course do you take here in GIC?", validators=[DataRequired()], choices=[("FCsciandeng", "FC Science and Engineering"),
                                                                                     ("FCbuisandmanage", "FC Buisness and Management"),
                                                                                     ("PMsciandeng", "PM Science and Engineering"),
                                                                                     ("PMbuisandmanage", "PM Buisness and Management")])
-    qntwo = RadioField(label="What grade did you get for last semester?", validators=[DataRequired()],
+    qn_two = RadioField(label="What grade did you get for last semester?", validators=[DataRequired()],
                        choices=[("1", "A"), ("2", "B"), ("3", "C"), ("4","D"), ("5", "E"), ("6", "F")])
 
-    qnthree = TextAreaField(label="Q3: How do you feel about the grade you have obtained?", validators=[DataRequired()])
+    qn_three = TextAreaField(label="Q3: How do you feel about the grade you have obtained?", validators=[DataRequired()])
 
     qn_four = IntegerField(label="How satisfied are you with your academic experience here in GIC?",
                            validators=[DataRequired(), NumberRange(min=1, max=10)])
@@ -21,6 +21,7 @@ class Questionnaire(Form):
     friends = BooleanField(label="Friends", validators=[DataRequired()])
     location = BooleanField(label="Location", validators=[DataRequired()])
     curr = BooleanField(label="Curriculum", validators=[DataRequired()])
-    qn_seven = TextAreaField(label="qnseven", validators=[DataRequired()])
-    qn_eight = RadioField(label="qntwo", validators=[DataRequired()], choices=[("very good", "Very Good"), ("good", "Good"), ("neutral", "Neutral"), ("bad", "Bad"), ("very bad", "Very Bad")])
-    submit = SubmitField(label="submit")
+    qn_seven = TextAreaField(label="Q7: Is there any other feedback you would like to add?", validators=[DataRequired()])
+    qn_eight = RadioField(label=" Q8: How would you rate this questionnaire?", validators=[DataRequired()],
+                          choices=[("1", "Very Good"), ("2", "Good"), ("3", "Neutral"), ("4", "Bad"), ("5", "Very Bad")])
+    submit = SubmitField(label="Submit")
