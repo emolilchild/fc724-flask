@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,30 +13,16 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav">
-                <a id="logo" href="{{url_for('homepage')}}"><img src="static/UofG_Coat_of_Arms.png" style="width:auto;height:60px"> </a>
-            </div>
-            <div>
-                <h1>Glasgow International College</h1>
-            </div>
-            <div class="nav">
-                <a href="{{url_for('info')}}">About</a>
-            </div>
-            <div class="nav">
-                <a href="{{url_for('form')}}">Form</a>
-            </div>
-        </nav>
-    </header>
+
     <hr>
     <main>
         <!-- form for data collection-->
-        <form action="/submit" method="post">
+        <form action="{{url_for('submit')}}" method="post">
             <!--section for identification purposes-->
             <div id="identification">
                 <h2 id="info">First things first!</h2>
                 <!-- input fields for name, student number and email and make them all required to fill in-->
+
                 <label for="fname">Name:</label>
                 <input id="fname" type="text" placeholder="Enter your first name" name="username" required>
                 <input id="lname" type="text" placeholder="Enter your last name" required> <br>
@@ -141,3 +131,4 @@
 
 
 </html>
+{% endblock %}

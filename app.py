@@ -13,7 +13,7 @@ def info():
 
 @app.route('/form')
 def form():
-    return render_template("datacollection.html")
+    return render_template("datacollection.html", form=form)
 
 @app.route('/submit', methods=['POST'])
 def submit():
