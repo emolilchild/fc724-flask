@@ -49,7 +49,7 @@
                 </p>
  <!--text area for providing feedback-->
                 <p>
-                    {{ form.qn_three.label }}
+                    {{ form.qn_three.label }} <br>
                     {{ form.qn_three(rows=6, cols=80) }}
 
                 </p>
@@ -57,11 +57,11 @@
                 <p>
                     {{ form.qn_four.label }}
                     <input type="range" min="1" max="10" step="1">
-                    {{ form.qn_four() }}
+
                 </p>
 
                 <p>
-                    {{ form.qn_five.label }}
+                    {{ form.qn_five.label }} <br>
                     {{ form.qn_five(rows=6, cols=80) }}
 
                 </p>
@@ -82,13 +82,10 @@
                 {{ form.curr() }}
 
                 <p>
-                    {{ form.qn_seven.label }}
+                    {{ form.qn_seven.label }} <br>
                     {{ form.qn_seven(rows=6, cols=80) }}
                 </p>
 
-                <p class="q">
-                    Q8: How would you rate this questionnaire?
-                </p>
                 <p>
                     {{ form.qn_eight.label }}
                 <ul>
