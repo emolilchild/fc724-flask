@@ -19,13 +19,15 @@
     <main>
         <!-- form for data collection-->
         <form action= method="post">
+            {{ form.hidden_tag() }}
             <!--section for identification purposes-->
             <div id="identification">
                 <h2 id="info">First things first!</h2>
                 <!-- input fields for name, student number and email and make them all required to fill in-->
-                {{
-                <label for="fname">Name:</label>
-                <input id="fname" type="text" placeholder="Enter your first name" name="username" required>
+                {{ form.f_name.label(for="fname") }}
+                {{ form.f_name(id="fname", placeholder="Enter your first name", required=True) }}
+
+                
                 <input id="lname" type="text" placeholder="Enter your last name" required> <br>
                 <label for="pnumber">Student Number:</label>
                 <input id="pnumber" type="number" placeholder="Enter you P number" required> <br>
