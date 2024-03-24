@@ -12,14 +12,14 @@ def info():
     return render_template("informationpage.html")
 
 @app.route('/form', methods=['GET', 'POST'])
-def form():
+def data():
     form = Questionnaire()
-    if form.validate_on_submit():
-        username = request.form['f_name']
-        return f"Hello {username}! Thank you for submitting the form!"
-    else:
-        return "Invalid submission. Please try again."
+    if form.validate():
+        result = request.form
+        return render_template("result.html", result=result)
     return render_template("datacollection.html", form=form)
+
+
 
 
 if __name__== "__main__":

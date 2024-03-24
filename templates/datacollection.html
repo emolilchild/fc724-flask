@@ -18,12 +18,12 @@
     <hr>
     <main>
         <!-- form for data collection-->
-        <form action="{{url_for('submit')}}" method="post">
+        <form action= method="post">
             <!--section for identification purposes-->
             <div id="identification">
                 <h2 id="info">First things first!</h2>
                 <!-- input fields for name, student number and email and make them all required to fill in-->
-
+                {{
                 <label for="fname">Name:</label>
                 <input id="fname" type="text" placeholder="Enter your first name" name="username" required>
                 <input id="lname" type="text" placeholder="Enter your last name" required> <br>
