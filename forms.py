@@ -13,4 +13,4 @@ class Questionnaire(Form):
     qn_six = BooleanField(label="qnsix", validators=[DataRequired()])
     qn_seven = TextAreaField(label="qnseven", validators=[DataRequired()])
     qn_eight = RadioField(label="qntwo", validators=[DataRequired()], choices=[("very good", "Very Good"), ("good", "Good"), ("neutral", "Neutral"), ("bad", "Bad"), ("very bad", "Very Bad")])
-    button = SubmitField(label="submit")
+    submit = SubmitField(label="submit")
