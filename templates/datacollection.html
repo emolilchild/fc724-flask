@@ -3,38 +3,27 @@
 
 {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Collection</title>
-    <link rel="stylesheet" href="static/assignment.css">
-</head>
-
-<body>
-
     <hr>
     <main>
         <!-- form for data collection-->
-        <form action="{{url_for('data')" method="post">
+        <form action="{{ url_for('data') }}" method="POST" >
             {{ form.hidden_tag() }}
+
             <!--section for identification purposes-->
             <div id="identification">
                 <h2 id="info">First things first!</h2>
                 <!-- input fields for name, student number and email and make them all required to fill in-->
                 {{ form.f_name.label }}
-                {{ form.f_name(placeholder="Enter your first name") }}
+                {{ form.f_name }}
 
                 {{ form.l_name.label }}
-                {{ form.l_name( placeholder="Enter your last name") }} <br>
+                {{ form.l_name}} <br>
 
                 {{ form.student_number.label }}
-                {{ form.student_number( placeholder="Enter you P number") }} <br>
+                {{ form.student_number }} <br>
 
                 {{ form.email.label }}
-                {{ form.email( placeholder="Enter you student email") }}
+                {{ form.email }}
             </div>
             <!--questionaire section-->
             <div id="questionaire">
@@ -60,8 +49,8 @@
                 </p>
  <!--text area for providing feedback-->
                 <p>
-                    {{ form.qn_three.label(placeholder="Write here" }}
-                    {{ form.qn_three(row=6, cols=80) }}
+                    {{ form.qn_three.label }}
+                    {{ form.qn_three(rows=6, cols=80) }}
 
                 </p>
                 <!-- provide a slider for the students to measure they satisfaction levels-->
@@ -72,16 +61,16 @@
                 </p>
 
                 <p>
-                    {{ form.qn_five.label(placeholder="Write here" }}
-                    {{ form.qn_five(row=6, cols=80) }}
+                    {{ form.qn_five.label }}
+                    {{ form.qn_five(rows=6, cols=80) }}
 
                 </p>
 
                 <p class="q">Q6: What do you like about GIC?</p>
                 <!-- use check boxes to select multiple options-->
 
-                    {{ form.teacher.label }}
-                    {{ form.teacher() }}
+                    {{ form.teachers.label }}
+                    {{ form.teachers() }}
                 <br>
                 {{ form.friends.label }}
                 {{ form.friends() }}
@@ -93,8 +82,8 @@
                 {{ form.curr() }}
 
                 <p>
-                    {{ form.qn_seven.label(placeholder="Write here" }}
-                    {{ form.qn_seven(row=6, cols=80) }}
+                    {{ form.qn_seven.label }}
+                    {{ form.qn_seven(rows=6, cols=80) }}
                 </p>
 
                 <p class="q">
@@ -103,7 +92,7 @@
                 <p>
                     {{ form.qn_eight.label }}
                 <ul>
-                    {% for subfield in form.qn_two %}
+                    {% for subfield in form.qn_eight %}
                     <li>
                         {{ subfield }} {{ subfield.label }}
                     </li>
@@ -120,8 +109,5 @@
         <!--provide a contact for the student to use in case they need help-->
         <a href="contactGIC@gmail.com">Contact Us</a>
     </footer>
-</body>
 
-
-</html>
 {% endblock %}

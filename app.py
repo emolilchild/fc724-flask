@@ -11,16 +11,13 @@ def homepage():
 def info():
     return render_template("informationpage.html")
 
-@app.route('/form', methods=['GET', 'POST'])
+@app.route('/data', methods=['GET', 'POST'])
 def data():
     form = Questionnaire()
     if form.validate():
         result = request.form
         return render_template("result.html", result=result)
     return render_template("datacollection.html", form=form)
-
-
-
 
 if __name__== "__main__":
     app.run(debug=True)

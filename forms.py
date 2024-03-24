@@ -3,7 +3,7 @@ from wtforms.validators import DataRequired, Email, NumberRange, Length
 class Questionnaire(Form):
     f_name = StringField(label="First Name", validators=[DataRequired()])
     l_name = StringField(label="Last Name", validators=[DataRequired()])
-    student_number = IntegerField(label="Student Number", validators=[DataRequired(),Length(min=6, max=6)])
+    student_number = IntegerField(label="Student Number", validators=[DataRequired(), Length(min=6, max=6)])
     email = StringField(label="Email", validators=[DataRequired(), Email()])
     qn_one = SelectField(label="Q1: What course do you take here in GIC?", validators=[DataRequired()], choices=[("FCsciandeng", "FC Science and Engineering"),
                                                                                     ("FCbuisandmanage", "FC Buisness and Management"),
